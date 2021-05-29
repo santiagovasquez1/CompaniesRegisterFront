@@ -1,0 +1,17 @@
+<div class="errorDialog" *ngIf="errorRegister">
+    <app-error-dialog [message]="message" [errorType]="errorType" (sendClose)="getIsClose($event)"></app-error-dialog>
+</div>
+
+<div class="container">
+    <h2>{{title}}</h2>
+    <form #companyNitForm="ngForm" (ngSubmit)="onSubmit(companyNitForm)">
+
+        <label for="Nit">Ingrese el NIT de la pesona natural o juridica para la que realizará el trámite, Sin incluir el digito de verificación, Luego seleccione <strong>Continuar</strong> para completar su solicitud</label>
+        <input type="number" name="NitInput" id="NitInput" #NitInput="ngModel" [(ngModel)]="Nit" required>
+        <span class="formError" *ngIf="NitInput.touched && !NitInput.valid">El Nit es obligatorio</span>
+        <p>
+            <input type="submit" class="button-confirm" value="Confirmar" [disabled]="!companyNitForm.form.valid">
+            <button class="button-back">Regresar</button>
+        </p>
+    </form>
+</div>

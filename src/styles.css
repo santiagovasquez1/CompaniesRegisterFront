@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.errorDialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.errorContainer {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 50px;
+    background: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.container h2,
+.errorContainer h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+form {
+    margin: 0px auto;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+    width: 40%;
+    padding: 5px;
+}
+
+form button,
+form input[type="submit"],
+.button-confirm,
+.button-back {
+    font-size: 17px;
+    padding: 5px;
+    margin-top: 15px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: 300ms all;
+}
+
+.button-confirm {
+    background: #ff0000;
+}
+
+.button-confirm:hover {
+    background: rgb(158, 40, 40);
+}
+
+.button-back {
+    background: black;
+}
+
+.button-back:hover {
+    background: rgba(0, 0, 0, 0.80);
+}
+
+.formError {
+    font-size: 13px;
+    padding: 3px;
+    color: red;
+    margin-left: 5px;
+}
