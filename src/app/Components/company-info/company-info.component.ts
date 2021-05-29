@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InputValidatorDirective } from 'src/app/Directives/input-validator.directive';
 
 @Component({
   selector: 'app-company-info',

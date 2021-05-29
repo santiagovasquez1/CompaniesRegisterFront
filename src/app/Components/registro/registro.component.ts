@@ -2,6 +2,7 @@ import { CompanyService } from './../../Services/company.service';
 import { GlobalService } from './../../Services/global.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-registro',
@@ -51,6 +52,7 @@ export class RegistroComponent implements OnInit {
 
   getIsClose(event: any) {
     this.errorRegister = event;
+    document.getElementById("NitInput")?.focus()
   }
 
 }

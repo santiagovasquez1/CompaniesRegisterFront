@@ -8,6 +8,7 @@ import { CompanyInfoComponent } from './Components/company-info/company-info.com
 import { ErrorComponent } from './Components/error/error.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
+import { InputValidatorDirective } from './Directives/input-validator.directive';
 
 @NgModule({
   declarations: [
@@ -15,15 +16,18 @@ import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.com
     RegistroComponent,
     CompanyInfoComponent,
     ErrorComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    InputValidatorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
