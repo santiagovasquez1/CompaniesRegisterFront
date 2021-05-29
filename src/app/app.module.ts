@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistroComponent } from './Components/registro/registro.component';
 import { CompanyInfoComponent } from './Components/company-info/company-info.component';
 import { ErrorComponent } from './Components/error/error.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 import { InputValidatorDirective } from './Directives/input-validator.directive';
 
@@ -24,6 +24,7 @@ import { InputValidatorDirective } from './Directives/input-validator.directive'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

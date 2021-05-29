@@ -10,7 +10,7 @@
         <input type="number" name="NitInput" id="NitInput" #NitInput="ngModel" [(ngModel)]="Nit" required>
         <span class="formError" *ngIf="NitInput.touched && !NitInput.valid">El Nit es obligatorio</span>
         <p>
-            <input type="submit" class="button-confirm" value="Confirmar" [disabled]="!companyNitForm.form.valid">
+            <input type="submit" class="button-confirm" value="Continuar" [disabled]="!companyNitForm.form.valid">
             <button class="button-back">Regresar</button>
         </p>
     </form>

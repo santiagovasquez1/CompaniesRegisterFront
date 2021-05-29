@@ -25,7 +25,7 @@ export class CompanyService {
     return this.http.post<any>(url, { headers: headers });
   }
 
-  getProject(id: number): Observable<any> {
+  getProjectById(id: number): Observable<any> {
     const url = `${this.global.url}\\GetCompany\\${id}`;
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get(url, { headers: headers });
