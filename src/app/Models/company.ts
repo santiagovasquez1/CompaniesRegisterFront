@@ -1,13 +1,13 @@
 export class Company {
-  constructor(public IdentificationType:string,
-    public IdentificationNumber:string,
-    public CompanyName:string,
-    public FirstName:string,
-    public SecondName:string,
-    public FirstLastName:string,
-    public SecondLastName:string,
-    public Email:string,
-    public AuthrorizaMessageToCellPhone:boolean,
-    public AuthrorizaMessageToEmail:boolean) {
+  constructor(public identificationType:string,
+    public identificationNumber:string,
+    public companyName:string,
+    public firstName:string,
+    public secondName:string,
+    public firstLastName:string,
+    public secondLastName:string,
+    public email:string,
+    public authrorizaMessageToCellPhone:boolean,
+    public authrorizaMessageToEmail:boolean) {
   }
 }

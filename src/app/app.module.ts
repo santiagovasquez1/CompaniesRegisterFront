@@ -9,6 +9,7 @@ import { ErrorComponent } from './Components/error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 import { InputValidatorDirective } from './Directives/input-validator.directive';
+import { RadioComponent } from './Components/radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { InputValidatorDirective } from './Directives/input-validator.directive'
     CompanyInfoComponent,
     ErrorComponent,
     ErrorDialogComponent,
+    RadioComponent,
     InputValidatorDirective
   ],
   imports: [

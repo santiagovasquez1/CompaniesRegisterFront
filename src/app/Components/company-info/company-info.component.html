@@ -1,10 +1,8 @@
-<!-- <p>company-info works!</p>
-<input type="text" name="prueba" id="prueba" #Prueba appInputValidator> -->
 <div class="container">
     <h2>{{title}}</h2>
     <form #companyInfo="ngForm" (ngSubmit)="onSubmit(companyInfo)">
         <label for=" IdentificationType ">Tipo de Identificación:</label>
-        <select name="IdentificationType" #IdentificationType="ngModel" [(ngModel)]="company.IdentificationType" required>
+        <select name="IdentificationType" #IdentificationType="ngModel" [(ngModel)]="company.identificationType" required>
           <option value="Nit" selected="selected">Persona Juridíca</option>
           <option value="Natural">Persona Natural</option>
           <option value="Extranjera">Identificación Extranjera</option>
@@ -12,34 +10,37 @@
         <span class="formError" *ngIf="IdentificationType.touched && !IdentificationType.valid">El tipo de Identificación es obligatorio</span>
 
         <label for="NitInput">Numero de Identificación:</label>
-        <input type="text" name="NitInput" #NitInput="ngModel" [(ngModel)]="company.IdentificationNumber" required>
+        <input type="text" name="NitInput" #NitInput="ngModel" [(ngModel)]="company.identificationNumber" required>
         <span class="formError" *ngIf="NitInput.touched && !NitInput.valid">El Nit es obligatorio</span>
 
-        <div *ngIf="company.IdentificationType=='Nit' ||company.IdentificationType=='Extranjera'">
+        <div *ngIf="company.identificationType=='Nit' ||company.identificationType=='Extranjera'">
             <label for="companyName">Nombre de la Compañia</label>
-            <input type="text" name="companyName" #companyName="ngModel" [(ngModel)]="company.CompanyName" required>
+            <input type="text" name="companyName" #companyName="ngModel" [(ngModel)]="company.companyName" required>
             <span class="formError" *ngIf="companyName.touched && !companyName.valid">El nombre de la compañia es obligatorio</span>
         </div>
 
-        <div *ngIf="company.IdentificationType!='Nit' && company.IdentificationType!='Extranjera'">
+        <div *ngIf="company.identificationType!='Nit' && company.identificationType!='Extranjera'">
             <label for="firstName">Primer Nombre</label>
-            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="company.FirstName" required>
+            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="company.firstName" required>
             <span class="formError" *ngIf="firstName.touched && !firstName.valid">El nombre de la persona natural es obligatorio</span>
 
             <label for="secondName">Segundo Nombre</label>
-            <input type="text" name="secondName" #secondName="ngModel" [(ngModel)]="company.SecondName">
+            <input type="text" name="secondName" #secondName="ngModel" [(ngModel)]="company.secondName">
 
             <label for="firstLastName">Primer apellido</label>
-            <input type="text" name="firstLastName" #firstLastName="ngModel" [(ngModel)]="company.FirstLastName" required>
+            <input type="text" name="firstLastName" #firstLastName="ngModel" [(ngModel)]="company.firstLastName" required>
             <span class="formError" *ngIf="firstName.touched && !firstName.valid">El primer apellido de la persona natural es obligatorio</span>
 
             <label for="secondLastName">Segundo apellido</label>
-            <input type="text" name="secondLastName" #SecondLastName="ngModel" [(ngModel)]="company.SecondLastName">
+            <input type="text" name="secondLastName" #SecondLastName="ngModel" [(ngModel)]="company.secondLastName">
         </div>
 
         <label for="email">Dirección de correo electronico</label>
-        <input type="email" name="email" #email="ngModel" [(ngModel)]="company.Email" required>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="company.email" required>
         <span class="formError" *ngIf="email.touched && !email.valid">El correo de la compañia es obligatorio</span>
+
+        <app-radio [title]="titleSms" [myValue]="smsOption" [radioName]="smsOptionName" (sendBindingState)="loadSmsOption($event)"></app-radio>
+        <app-radio [title]="titleEmail" [myValue]="emailOption" [radioName]="emailOptionName" (sendBindingState)="loadEmailOption($event)"></app-radio>
 
         <p>
             <input type="submit" class="button-confirm" value="Continuar" [disabled]="!companyInfo.form.valid">
@@ -47,5 +48,3 @@
         </p>
     </form>
 </div>
-
-<h1>{{message}}</h1>

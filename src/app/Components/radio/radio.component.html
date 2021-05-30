@@ -1,0 +1,9 @@
+<div class="options">
+    <p>{{title}}</p>
+    <label>
+      <input type="radio" id="{{radioName+1}}" name="{{radioName+1}}" [(ngModel)]="myValue" value="true" (change)="onChange()">Si
+    </label>
+    <label>
+      <input type="radio" id="{{radioName+2}}}" name="{{radioName+2}}" [(ngModel)]="myValue"  value="false" (change)="onChange()">No
+    </label>
+</div>
