@@ -9,17 +9,12 @@ export class InputValidatorDirective {
 
   constructor(public el: ElementRef) { }
 
-  ngOnInit(): void {
-  }
-
-  @HostListener('keypress',['$event']) onKeyPress(event:any){
-
-    // let Input=<HTMLInputElement>this.el.nativeElement;
-
-    // if (isNaN(event.key)){
-    //  console.log(event.key);
-    // }
-
+  @HostListener('input', ['$event']) onInputChange(event:any) {
+    const initalValue = this.el.nativeElement.value;
+    this.el.nativeElement.value = initalValue.replace(/[^0-9]*/g, '');
+    if ( initalValue !== this.el.nativeElement.value) {
+      event.stopPropagation();
+    }
   }
 
 }

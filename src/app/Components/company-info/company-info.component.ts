@@ -20,19 +20,19 @@ export class CompanyInfoComponent implements OnInit {
   public titleEmail: string;
   public smsOption: string;
   public emailOption: string;
-  public emailOptionName:string;
-  public smsOptionName:string;
+  public emailOptionName: string;
+  public smsOptionName: string;
 
-  constructor(private global:GlobalService,private companyService: CompanyService, private router: Router, private route: ActivatedRoute) {
+  constructor(private global: GlobalService, private companyService: CompanyService, private router: Router, private route: ActivatedRoute) {
     this.title = "Datos de la persona natural o jurídica que solicita el servicio de trámites virtuales:"
     this.company = new Company("Nit", "", "", "", "", "", "", "", false, false);
     this.message = "";
     this.titleSms = "¿Desea recibir notificaciones via SMS?";
     this.titleEmail = "¿Desea recibir notificaciones via Email?"
-    this.smsOption = "";
-    this.emailOption = "";
-    this.emailOptionName="emailRadio";
-    this.smsOptionName="smsRadio"
+    this.smsOption = this.company.authrorizaMessageToCellPhone.toString();
+    this.emailOption = this.company.authrorizaMessageToEmail.toString();
+    this.emailOptionName = "emailRadio";
+    this.smsOptionName = "smsRadio"
   }
 
   ngOnInit(): void {
@@ -46,6 +46,8 @@ export class CompanyInfoComponent implements OnInit {
   loadCompany(id: number) {
     this.companyService.getProjectById(id).subscribe(result => {
       this.company = <Company>result;
+      this.smsOption = this.company.authrorizaMessageToCellPhone.toString();
+      this.emailOption = this.company.authrorizaMessageToEmail.toString();
     }, error => {
       console.log(error.error)
     });
@@ -54,7 +56,7 @@ export class CompanyInfoComponent implements OnInit {
   onSubmit(form: NgForm) {
     let id = Number.parseInt(this.company.identificationNumber);
     this.companyService.registerCompany(id, this.company).subscribe(result => {
-      this.global.canRegister=false;
+      this.global.canRegister = false;
       this.router.navigate(["/"]);
     }, error => {
       form.reset();

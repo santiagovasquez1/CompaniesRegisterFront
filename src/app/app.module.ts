@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 import { InputValidatorDirective } from './Directives/input-validator.directive';
 import { RadioComponent } from './Components/radio/radio.component';
+import { OnlyTextDirective } from './Directives/only-text.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RadioComponent } from './Components/radio/radio.component';
     ErrorComponent,
     ErrorDialogComponent,
     RadioComponent,
-    InputValidatorDirective
+    InputValidatorDirective,
+    OnlyTextDirective
   ],
   imports: [
     BrowserModule,

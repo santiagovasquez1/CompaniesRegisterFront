@@ -7,7 +7,7 @@
     <form #companyNitForm="ngForm" (ngSubmit)="onSubmit(companyNitForm)">
 
         <label for="Nit">Ingrese el NIT de la pesona natural o juridica para la que realizará el trámite, Sin incluir el digito de verificación, Luego seleccione <strong>Continuar</strong> para completar su solicitud</label>
-        <input type="number" name="NitInput" id="NitInput" #NitInput="ngModel" [(ngModel)]="Nit" required>
+        <input type="text" appInputValidator name="NitInput" id="NitInput" #NitInput="ngModel" [(ngModel)]="Nit" required>
         <span class="formError" *ngIf="NitInput.touched && !NitInput.valid">El Nit es obligatorio</span>
         <p>
             <input type="submit" class="button-confirm" value="Continuar" [disabled]="!companyNitForm.form.valid">

@@ -10,29 +10,29 @@
         <span class="formError" *ngIf="IdentificationType.touched && !IdentificationType.valid">El tipo de Identificación es obligatorio</span>
 
         <label for="NitInput">Numero de Identificación:</label>
-        <input type="text" name="NitInput" #NitInput="ngModel" [(ngModel)]="company.identificationNumber" required>
+        <input type="text" name="NitInput" #NitInput="ngModel" [(ngModel)]="company.identificationNumber" appInputValidator required>
         <span class="formError" *ngIf="NitInput.touched && !NitInput.valid">El Nit es obligatorio</span>
 
         <div *ngIf="company.identificationType=='Nit' ||company.identificationType=='Extranjera'">
             <label for="companyName">Nombre de la Compañia</label>
-            <input type="text" name="companyName" #companyName="ngModel" [(ngModel)]="company.companyName" required>
+            <input type="text" name="companyName" #companyName="ngModel" [(ngModel)]="company.companyName" appOnlyText required>
             <span class="formError" *ngIf="companyName.touched && !companyName.valid">El nombre de la compañia es obligatorio</span>
         </div>
 
         <div *ngIf="company.identificationType!='Nit' && company.identificationType!='Extranjera'">
             <label for="firstName">Primer Nombre</label>
-            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="company.firstName" required>
+            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="company.firstName" appOnlyText required>
             <span class="formError" *ngIf="firstName.touched && !firstName.valid">El nombre de la persona natural es obligatorio</span>
 
             <label for="secondName">Segundo Nombre</label>
-            <input type="text" name="secondName" #secondName="ngModel" [(ngModel)]="company.secondName">
+            <input type="text" name="secondName" #secondName="ngModel" [(ngModel)]="company.secondName" appOnlyText>
 
             <label for="firstLastName">Primer apellido</label>
-            <input type="text" name="firstLastName" #firstLastName="ngModel" [(ngModel)]="company.firstLastName" required>
+            <input type="text" name="firstLastName" #firstLastName="ngModel" [(ngModel)]="company.firstLastName" appOnlyText required>
             <span class="formError" *ngIf="firstName.touched && !firstName.valid">El primer apellido de la persona natural es obligatorio</span>
 
             <label for="secondLastName">Segundo apellido</label>
-            <input type="text" name="secondLastName" #SecondLastName="ngModel" [(ngModel)]="company.secondLastName">
+            <input type="text" name="secondLastName" #SecondLastName="ngModel" [(ngModel)]="company.secondLastName" appOnlyText>
         </div>
 
         <label for="email">Dirección de correo electronico</label>
