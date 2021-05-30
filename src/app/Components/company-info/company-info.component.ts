@@ -22,6 +22,7 @@ export class CompanyInfoComponent implements OnInit {
   public emailOption: string;
   public emailOptionName: string;
   public smsOptionName: string;
+  public errorEmail: string;
 
   constructor(private global: GlobalService, private companyService: CompanyService, private router: Router, private route: ActivatedRoute) {
     this.title = "Datos de la persona natural o jurídica que solicita el servicio de trámites virtuales:"
@@ -33,6 +34,7 @@ export class CompanyInfoComponent implements OnInit {
     this.emailOption = this.company.authrorizaMessageToEmail.toString();
     this.emailOptionName = "emailRadio";
     this.smsOptionName = "smsRadio"
+    this.errorEmail = "";
   }
 
   ngOnInit(): void {
@@ -79,4 +81,6 @@ export class CompanyInfoComponent implements OnInit {
       this.company.authrorizaMessageToEmail = false;
     }
   }
+
+
 }
