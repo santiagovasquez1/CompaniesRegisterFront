@@ -82,5 +82,7 @@ export class CompanyInfoComponent implements OnInit {
     }
   }
 
-
+  onBackClick(){
+    this.router.navigate(["/"]);
+  }
 }

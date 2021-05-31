@@ -55,4 +55,8 @@ export class RegistroComponent implements OnInit {
     document.getElementById("NitInput")?.focus()
   }
 
+  onBackClick(){
+    this.router.navigate(["/"]);
+  }
+
 }

@@ -45,7 +45,7 @@
 
         <p>
             <input type="submit" class="button-confirm" value="Continuar" [disabled]="!companyInfo.form.valid && this.errorEmail==''">
-            <button class="button-back">Regresar</button>
+            <button class="button-back" (click)="onBackClick()">Regresar</button>
         </p>
     </form>
 </div>
